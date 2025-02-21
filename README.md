@@ -1,5 +1,7 @@
 # Validation lib comparaison
 
+[![Project license](https://img.shields.io/github/license/Shuunen/validation-lib-comparison.svg?color=informational)](https://github.com/Shuunen/validation-lib-comparison/blob/master/LICENSE)
+
 ## The goal of this project
 
 The goal is to compare different libraries and approaches to validate data in a TypeScript ecosystem.
@@ -81,3 +83,10 @@ Just open an issue or a PR, I'll be happy to discuss it with you <3
 - [Valibot](https://github.com/fabian-hiller/valibot) : for making this comparison possible
 - [Zod](https://github.com/colinhacks/zod) : for making this comparison possible
   
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/Shuunen/validation-lib-comparison.svg?variant=adaptive)](https://starchart.cc/Shuunen/validation-lib-comparison)
+
+## Page views
+
+[![Free Website Counter](https://www.websitecounterfree.com/c.php?d=9&id=65903&s=12)](https://www.websitecounterfree.com)
