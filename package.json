@@ -1,15 +1,55 @@
 {
-  "name": "validation-lib-comparaison",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
+  "$schema": "https://json.schemastore.org/package",
+  "author": "Jordan Boyer",
+  "bugs": "https://github.com/Shuunen/validation-lib-comparison/issues",
+  "contributors": [
+    {
+      "name": "Jordan Boyer"
+    },
+    {
+      "email": "romain.racamier@gmail.com",
+      "name": "Romain Racamier-Lafon"
+    }
+  ],
   "dependencies": {
-    "arktype": "^2.0.0",
-    "zod": "^3.24.1"
-  }
+    "arktype": "^2.0",
+    "valibot": "latest",
+    "zod": "^3.24"
+  },
+  "description": "Comparison of different TypeScript validation libraries",
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0",
+    "@types/bun": "latest",
+    "repo-check": "^1.40",
+    "typescript": "^5.7"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/Shuunen/validation-lib-comparison#readme",
+  "keywords": [
+    "shuunen",
+    "typescript",
+    "validation",
+    "comparison"
+  ],
+  "license": "MIT",
+  "module": "index.ts",
+  "name": "validation-lib-comparaison",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shuunen/validation-lib-comparison.git"
+  },
+  "scripts": {
+    "bench": "bun bench:bun --warmup 5 --runs 25",
+    "bench:bun": "hyperfine 'bun src/arktype.ts' 'bun src/valibot.ts' 'bun src/zod.ts'",
+    "bench:node": "hyperfine --runs 30 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod.js'",
+    "build": "bun scripts/build.ts && echo build success",
+    "check": "repo-check && bun check:tsc && bun run build && bun check:once && echo check success",
+    "check:once": "bun bench:bun --runs 1 && echo check:once success",
+    "check:tsc": "tsc --noEmit && echo check:tsc success"
+  },
+  "type": "module",
+  "version": "1.0.0"
 }
