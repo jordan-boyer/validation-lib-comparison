@@ -1,9 +1,13 @@
 {
     "editor.quickSuggestions": {
-    	"strings": "on"
+        "strings": "on"
     },
     // prioritize ArkType's "type" for autoimports
     "typescript.preferences.autoImportSpecifierExcludeRegexes": [
-    	"^(node:)?os$"
+        "^(node:)?os$"
+    ],
+    "cSpell.words": [
+        "arktype",
+        "valibot"
     ],
 }
