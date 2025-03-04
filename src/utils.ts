@@ -16,3 +16,5 @@ export function checkUserB (userB: User) {
 export function checkUserC (userC: User) {
   console.assert(userC.name === "Jordan", 'userC.name should be Jordan')
 }
+
+export const nbIterations = 1000
