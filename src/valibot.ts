@@ -1,20 +1,20 @@
-import * as v from 'valibot'
-import { checkUserA, checkUserB, checkUserC } from './utils'
+import { number, object, optional, parse, safeParse, string, type InferInput, type InferOutput } from 'valibot'
+import { checkUserA, checkUserB, checkUserC } from './utils.ts'
 
-const userSchema = v.object({
-  name: v.string(),
-  age: v.optional(v.number(), 42),
+const userSchema = object({
+  name: string(),
+  age: optional(number(), 42),
 })
 
-export type User = v.InferOutput<typeof userSchema>
+export type User = InferOutput<typeof userSchema>
 
-export type UserInput = v.InferInput<typeof userSchema>
+export type UserInput = InferInput<typeof userSchema>
 
-const userA = v.parse(userSchema, { name: "Jordan" })
+const userA = parse(userSchema, { name: "Jordan" })
 checkUserA(userA)
 
 function createUser (input: UserInput) {
-  const result = v.safeParse(userSchema, input)
+  const result = safeParse(userSchema, input)
   if (!result.success) return userA
   return result.output
 }
