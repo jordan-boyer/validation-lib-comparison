@@ -42,13 +42,13 @@
     "url": "git+https://github.com/Shuunen/validation-lib-comparison.git"
   },
   "scripts": {
-    "bench": "bun bench:bun --warmup 5 --runs 25",
+    "bench": "bun bench:bun --warmup 5 --runs 10",
     "bench:bun": "hyperfine 'bun src/arktype.ts' 'bun src/valibot.ts' 'bun src/zod.ts'",
-    "bench:node": "hyperfine --runs 30 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod.js'",
-    "bench:node:strip": "hyperfine --runs 30 'node --experimental-strip-types src/arktype.ts' 'node --experimental-strip-types src/valibot.ts' 'node --experimental-strip-types src/zod.ts'",
+    "bench:node": "hyperfine --runs 10 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod.js'",
+    "bench:node:strip": "hyperfine --runs 10 'node --experimental-strip-types src/arktype.ts' 'node --experimental-strip-types src/valibot.ts' 'node --experimental-strip-types src/zod.ts'",
     "build": "bun scripts/build.ts && echo build success",
     "check": "repo-check && bun check:tsc && bun run build && bun check:once && echo check success",
-    "check:once": "bun bench:bun --runs 1 && echo check:once success",
+    "check:once": "bun src/arktype.ts && bun src/valibot.ts && bun src/zod.ts && echo check:once success",
     "check:tsc": "tsc --noEmit && echo check:tsc success"
   },
   "type": "module",
