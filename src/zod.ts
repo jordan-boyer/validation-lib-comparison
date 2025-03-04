@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { checkUserA, checkUserB, checkUserC } from './utils'
+import { checkUserA, checkUserB, checkUserC } from './utils.ts'
 
 const userSchema = z.object({
   name: z.string(),
