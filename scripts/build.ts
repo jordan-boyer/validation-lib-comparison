@@ -16,7 +16,7 @@ function showFileSize (path: string) {
 function build (file: string) {
   const entrypoints = [`./src/${file}`]
   Bun.build({ entrypoints, outdir, minify: true }).then((data) => {
-    showFileSize(data.outputs[0].path)
+    if (data.outputs[0]?.path) showFileSize(data.outputs[0].path)
   }).catch((err) => { console.error('Build failed:', err) })
 }
 

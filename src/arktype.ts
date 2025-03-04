@@ -1,5 +1,5 @@
 import { type } from "arktype"
-import { checkUserA, checkUserB, checkUserC } from './utils'
+import { checkUserA, checkUserB, checkUserC } from './utils.ts'
 
 const userSchema = type({
   name: type.string,

@@ -18,9 +18,9 @@ Make sure you have [Bun](https://bun.sh) v1.1.x then :
 # install the dependencies
 bun install
 # run each file once just to verify that everything is working as expected
-bun bench --runs 1
+bun check:once
 # run the benchmarks
-bun bench --runs 50
+bun bench
 ```
 
 At the time of writing, Node 22 is around 2 times slower than Bun v1 ^^'

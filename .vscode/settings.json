@@ -1,13 +1,14 @@
 {
-    "editor.quickSuggestions": {
-        "strings": "on"
-    },
-    // prioritize ArkType's "type" for autoimports
-    "typescript.preferences.autoImportSpecifierExcludeRegexes": [
-        "^(node:)?os$"
-    ],
-    "cSpell.words": [
-        "arktype",
-        "valibot"
-    ],
+  "cSpell.words": [
+    "arktype",
+    "valibot"
+  ],
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  // prioritize ArkType's "type" for autoimports
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": [
+    "^(node:)?os$"
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

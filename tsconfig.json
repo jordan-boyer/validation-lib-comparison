@@ -3,6 +3,7 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
+    "erasableSyntaxOnly": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "lib": [
@@ -24,6 +25,7 @@
   },
   "extends": "@tsconfig/strictest/tsconfig.json",
   "include": [
+    "scripts",
     "src"
   ]
 }

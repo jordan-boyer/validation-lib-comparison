@@ -12,7 +12,7 @@
     }
   ],
   "dependencies": {
-    "arktype": "^2.0",
+    "arktype": "^2.1",
     "valibot": "latest",
     "zod": "^3.24"
   },
@@ -20,8 +20,8 @@
   "devDependencies": {
     "@tsconfig/strictest": "^2.0",
     "@types/bun": "latest",
-    "repo-check": "^1.40",
-    "typescript": "^5.7"
+    "repo-check": "^1.42",
+    "typescript": "^5.8"
   },
   "files": [
     "dist"
@@ -45,6 +45,7 @@
     "bench": "bun bench:bun --warmup 5 --runs 25",
     "bench:bun": "hyperfine 'bun src/arktype.ts' 'bun src/valibot.ts' 'bun src/zod.ts'",
     "bench:node": "hyperfine --runs 30 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod.js'",
+    "bench:node:strip": "hyperfine --runs 30 'node --experimental-strip-types src/arktype.ts' 'node --experimental-strip-types src/valibot.ts' 'node --experimental-strip-types src/zod.ts'",
     "build": "bun scripts/build.ts && echo build success",
     "check": "repo-check && bun check:tsc && bun run build && bun check:once && echo check success",
     "check:once": "bun bench:bun --runs 1 && echo check:once success",
