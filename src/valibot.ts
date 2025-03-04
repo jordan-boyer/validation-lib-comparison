@@ -1,9 +1,13 @@
-import { number, object, optional, parse, safeParse, string, type InferInput, type InferOutput } from 'valibot'
+import { number, union, object, optional, parse, safeParse, string, type InferInput, type InferOutput, pipe, transform } from 'valibot'
 import { checkUserA, checkUserB, checkUserC } from './utils.ts'
 
 const userSchema = object({
   name: string(),
   age: optional(number(), 42),
+  phone: pipe(
+    optional(union([string(), number()]), "123-456-7890"),
+    transform((phone) => typeof phone === 'number' ? phone.toString() : phone)
+  ),
 })
 
 export type User = InferOutput<typeof userSchema>
@@ -19,7 +23,7 @@ function createUser (input: UserInput) {
   return result.output
 }
 
-const userB = createUser({ name: "Romain", age: 35 })
+const userB = createUser({ name: "Romain", age: 35, phone: 1234567890 })
 checkUserB(userB)
 
 // @ts-expect-error age should be a number
