@@ -29,30 +29,31 @@ At the time of writing, Node 22 is around 2 times slower than Bun v1 ^^'
 
 Here are the library used in this comparison :
 
-- [arktype](https://github.com/arktypeio/arktype) v2.0.4 from David Blass
-- [valibot](https://github.com/fabian-hiller/valibot) v1.0.0-rc.1 from Fabian Hiller
-- [zod](https://github.com/colinhacks/zod) v3.24.2 from Colin McDonnell
+- [arktype](https://github.com/arktypeio/arktype) from David Blass
+- [valibot](https://github.com/fabian-hiller/valibot) from Fabian Hiller
+- [zod](https://github.com/colinhacks/zod) from Colin McDonnell
 
-| Date       | Score | Library | Deps  |  Size  | Light | Input | Throw | Safe  | Execution | Fast  |
-| ---------- | :---: | :-----: | :---: | :----: | :---: | :---: | :---: | :---: | :-------: | :---: |
-| 2025-02-21 |   2   | arktype |   2   | 133 KB |   0   | **1** |   0   | **1** |  155 ms   |   0   |
-| 2025-02-21 |   6   | valibot | **0** |  4 KB  | **2** | **1** | **1** | **1** |   74 ms   | **1** |
-| 2025-02-21 |   4   |   zod   | **0** | 62 KB  |   0   | **1** | **1** | **1** |   75 ms   | **1** |
+| Date       | Score | Library | Deps  |  Size  | Light | Input | Throw | Safe  |  Execution  | Fast  | Readability |
+| ---------- | :---: | :-----: | :---: | :----: | :---: | :---: | :---: | :---: | :---------: | :---: | :---------: |
+| 2025-03-04 |   3   | arktype |   2   | 140 KB |  _0_  | **1** |  _0_  | **1** |  155 ms_0_  |  _0_  |    **1**    |
+| 2025-03-04 |   6   | valibot | **0** |  5 KB  | **1** | **1** | **1** | **1** | 74 ms **1** | **1** |     _0_     |
+| 2025-03-04 |   6   |   zod   | **0** | 60 KB  |  _0_  | **1** | **1** | **1** | 75 ms **1** | **1** |    **1**    |
 
 Legend :
 
 - Deps : the number of dependencies of the library
 - Size : the minified build size in bytes of the related file in `src`, run  `bun run build` to see by yourself
-- Light : 1 point if the build is less than 10 KB, 1 bonus point if it's less than 5 KB
+- Light : 1 point if the build is less than 10 KB
 - Input : 1 point if the library can see that `age` is optional in the input but not optional in `type User` the output type
 - Throw : 1 point if the library have a parse or throw method, useful when we don't want to handle the error cases
 - Safe : 1 point if the library have a safe parse method that will not throw and usually return a `Result` type
-- Execution : average time in milliseconds to execute the test file with bun, check the `bun run bench` command output
+- Execution : 1 point if the average time in milliseconds to execute the test file with bun is under 100ms, check the `bun run bench` command output
 - Fast : 1 point if the library execution time is less than 100 ms
+- Readability : 1 point if the library is easy to write & read, the syntax need to be intuitive
 
 ## My favorite pick
 
-Valibot is my favorite pick because it's fast as Zod but has a lighter impact on the bundle size.
+Zod is my favorite pick because it's fast as Valibot but provide a better readability. Ok the build size is bigger but it does not impact the performance.
 
 ## Todo
 
@@ -60,6 +61,7 @@ Valibot is my favorite pick because it's fast as Zod but has a lighter impact on
 - [ ] check error messages
 - [ ] check custom error messages
 - [ ] check custom validation rules
+- [ ] check the perf without using `console`
 
 ## How to contribute
 

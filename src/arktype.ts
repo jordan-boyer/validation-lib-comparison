@@ -4,6 +4,7 @@ import { checkUserA, checkUserB, checkUserC } from './utils.ts'
 const userSchema = type({
   name: type.string,
   age: type.number.default(42),
+  phone: type.string.or(type.number).pipe(phone => typeof phone === 'number' ? phone.toString() : phone).default("123-456-7890"),
 })
 
 export type User = typeof userSchema.inferOut
@@ -16,7 +17,7 @@ checkUserA(userA)
 
 function createUser (input: UserInput) {
   const user = userSchema(input)
-  if (user instanceof type.errors) return { name: "Jordan", age: 42 } // cannot use userA here
+  if (user instanceof type.errors) return userA as User // :'''''(
   return user
 }
 

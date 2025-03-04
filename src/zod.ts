@@ -1,14 +1,15 @@
-import { z } from "zod"
+import { string, number, object, type infer as InferOutput, type input as InferInput } from "zod"
 import { checkUserA, checkUserB, checkUserC } from './utils.ts'
 
-const userSchema = z.object({
-  name: z.string(),
-  age: z.number().default(42),
+const userSchema = object({
+  name: string(),
+  age: number().default(42),
+  phone: string().or(number()).default("123-456-7890").transform(phone => typeof phone === 'number' ? phone.toString() : phone),
 })
 
-export type User = z.infer<typeof userSchema>
+export type User = InferOutput<typeof userSchema>
 
-export type UserInput = z.input<typeof userSchema>
+export type UserInput = InferInput<typeof userSchema>
 
 const userA = userSchema.parse({ name: "Jordan" })
 checkUserA(userA)
@@ -19,7 +20,7 @@ function createUser (input: UserInput) {
   return result.data
 }
 
-const userB = createUser({ name: "Romain", age: 35 })
+const userB = createUser({ name: "Romain", age: 35, phone: 1234567890 })
 checkUserB(userB)
 
 // @ts-expect-error age should be a number
