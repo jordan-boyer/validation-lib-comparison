@@ -35,9 +35,12 @@ Here are the library used in this comparison :
 
 | Date       | Score | Library | Deps  |  Size  | Light | Input | Throw | Safe  | Script exec |  Lib exec   | Fast  | Readability |
 | ---------- | :---: | :-----: | :---: | :----: | :---: | :---: | :---: | :---: | :---------: | :---------: | :---: | :---------: |
-| 2025-03-04 |   1   | arktype |   2   | 140 KB |  _0_  | **1** |  _0_  | **1** | 729 ms _-1_ | 586 ms _-1_ |  _0_  |    **1**    |
-| 2025-03-04 |   7   | valibot | **0** |  5 KB  | **1** | **1** | **1** | **1** | 70 ms **1** | 10 ms **1** | **1** |     _0_     |
-| 2025-03-04 |   6   |   zod   | **0** | 60 KB  |  _0_  | **1** | **1** | **1** | 98 ms **1** |  34 ms _0_  | **1** |    **1**    |
+| 2025-04-11 |   1   | arktype |   2   | 140 KB |  _0_  | **1** |  _0_  | **1** | 406 ms _-1_ | 338 ms _-1_ |  _0_  |    **1**    |
+| 2025-04-11 |   7   | valibot | **0** |  5 KB  | **1** | **1** | **1** | **1** | 14 ms **1** |  4 ms **1** | **1** |     _0_     |
+| 2025-04-11 |   6   |   zod3  | **0** | 60 KB  |  _0_  | **1** | **1** | **1** | 25 ms **1** |  14 ms _0_  | **1** |    **1**    |
+| 2025-04-11 |   6   |   zod4  |   1   | 49 KB  |  _0_  | **1** | **1** | **1** | 79 ms **1** |  60 ms _0_  | **1** |    **1**    |
+
+Test have been updated on 04-11 and it now run in a M3 pro that's why the numbers are smaller now
 
 Legend :
 
@@ -60,13 +63,15 @@ Ok the build size is bigger but it does not impact the performance that much.
 
 The 34ms vs 10ms seems like a 3x difference but it's the time to run 1000 iterations. So in the end it's not that much of a difference in a real world scenario.
 
+For some weird reason zod4 seems to be slower than zod3
+
 ## Todo
 
 - [ ] vanilla version ?
 - [ ] check error messages
 - [ ] check custom error messages
 - [ ] check custom validation rules
-- [ ] check the perf without using `console`
+- [X] check the perf without using `console`
 
 ## How to contribute
 
