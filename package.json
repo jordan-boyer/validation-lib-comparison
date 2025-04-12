@@ -48,8 +48,9 @@
     "bench:node": "hyperfine --runs 10 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod3.js' 'node dist/zod4.js'",
     "bench:node:strip": "hyperfine --runs 10 'node --experimental-strip-types src/arktype.ts' 'node --experimental-strip-types src/valibot.ts' 'node --experimental-strip-types src/zod3.ts' 'node --experimental-strip-types src/zod4.ts'",
     "build": "bun scripts/build.ts && echo build success",
-    "check": "repo-check && bun check:tsc && bun run build && bun check:once && echo check success",
+    "check": "pnpm i && bun check:tsc && bun run build && bun check:once && echo check success",
     "check:once": "bun src/arktype.ts && bun src/valibot.ts && bun src/zod3.ts && bun src/zod4.ts && echo check:once success",
+    "check:repo": "repo-check && echo check:repo success",
     "check:tsc": "tsc --noEmit && echo check:tsc success"
   },
   "type": "module",
