@@ -12,6 +12,7 @@
     }
   ],
   "dependencies": {
+    "@zod/mini": "4.0.0-beta.20250412T085909",
     "arktype": "^2.1",
     "valibot": "latest",
     "zod3": "npm:zod@^3.24.2",
@@ -44,12 +45,12 @@
   },
   "scripts": {
     "bench": "bun bench:bun --warmup 5 --runs 10",
-    "bench:bun": "hyperfine 'bun src/arktype.ts' 'bun src/valibot.ts' 'bun src/zod3.ts' 'bun src/zod4.ts'",
-    "bench:node": "hyperfine --runs 10 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod3.js' 'node dist/zod4.js'",
-    "bench:node:strip": "hyperfine --runs 10 'node --experimental-strip-types src/arktype.ts' 'node --experimental-strip-types src/valibot.ts' 'node --experimental-strip-types src/zod3.ts' 'node --experimental-strip-types src/zod4.ts'",
+    "bench:bun": "hyperfine 'bun src/arktype.ts' 'bun src/valibot.ts' 'bun src/zod3.ts' 'bun src/zod4.ts' 'bun src/zod-mini.ts'",
+    "bench:node": "hyperfine --runs 10 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod3.js' 'node dist/zod4.js' 'node dist/zod-mini.js'",
+    "bench:node:strip": "hyperfine --runs 10 'node --experimental-strip-types src/arktype.ts' 'node --experimental-strip-types src/valibot.ts' 'node --experimental-strip-types src/zod3.ts' 'node --experimental-strip-types src/zod4.ts' 'node --experimental-strip-types src/zod-mini.ts'",
     "build": "bun scripts/build.ts && echo build success",
     "check": "pnpm i && bun check:tsc && bun run build && bun check:once && echo check success",
-    "check:once": "bun src/arktype.ts && bun src/valibot.ts && bun src/zod3.ts && bun src/zod4.ts && echo check:once success",
+    "check:once": "bun src/arktype.ts && bun src/valibot.ts && bun src/zod3.ts && bun src/zod4.ts && bun src/zod-mini.ts && echo check:once success",
     "check:repo": "repo-check && echo check:repo success",
     "check:tsc": "tsc --noEmit && echo check:tsc success"
   },
