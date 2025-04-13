@@ -31,7 +31,7 @@ for (let i = 0; i < nbIterations; i++) {
 
   type UserInput = InferInput<typeof userSchema>;
 
-  const userA = userSchema.parse({ name: "Jordan", age: 42 });
+  const userA = userSchema.parse({ name: "Jordan" });
   checkUserA(userA);
 
   function createUser(input: UserInput) {
@@ -39,7 +39,8 @@ for (let i = 0; i < nbIterations; i++) {
     if (!result.success) return userA;
     return result.data;
   }
-
+  // (╯°□°）╯︵ ┻━┻
+  // Zod mini doesn't support "or" so a string is given for phone instead of a number like in other scripts
   const userB = createUser({ name: "Romain", age: 35, phone: "1234567890" });
   checkUserB(userB);
 
@@ -49,7 +50,7 @@ for (let i = 0; i < nbIterations; i++) {
 }
 
 console.log(
-  `Zod 4 mini exec time for ${nbIterations} iterations :`,
+  `Zod mini exec time for ${nbIterations} iterations :`,
   performance.now() - startTime,
   "ms"
 );

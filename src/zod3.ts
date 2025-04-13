@@ -44,7 +44,7 @@ for (let i = 0; i < nbIterations; i++) {
 }
 
 console.log(
-  `Zod3 exec time for ${nbIterations} iterations :`,
+  `Zod v3 exec time for ${nbIterations} iterations :`,
   performance.now() - startTime,
   "ms"
 );

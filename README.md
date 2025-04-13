@@ -34,20 +34,21 @@ Here are the library used in this comparison :
 - [zod](https://github.com/colinhacks/zod) from Colin McDonnell
 - [zod/mini](https://github.com/colinhacks/zod) from Colin McDonnell
 
-| Date       | Score |  Library  | Deps  |  Size  | Light | Input | Throw | Safe  | Script exec  |  Lib exec   | Fast  | Readability |
-| ---------- | :---: | :-------: | :---: | :----: | :---: | :---: | :---: | :---: | :----------: | :---------: | :---: | :---------: |
-| 2025-04-13 |   0   |  arktype  |   2   | 147 KB |  _0_  | **1** |  _0_  | **1** | 873 ms _-1_  | 691 ms _-1_ |  _0_  |    **1**    |
-| 2025-04-13 |   7   |  valibot  | **0** |  5 KB  | **1** | **1** | **1** | **1** | 68 ms **1**  | 11 ms **1** | **1** |     _0_     |
-| 2025-04-13 |   7   |  zod v3   | **0** | 60 KB  |  _0_  | **1** | **1** | **1** | 101 ms **1** | 35 ms **1** | **1** |    **1**    |
-| 2025-04-13 |   4   |  zod v4   |   1   | 49 KB  |  _0_  | **1** | **1** | **1** |  222 ms _0_  | 144 ms _0_  |  _0_  |    **1**    |
-| 2025-04-13 |   4   | @zod/mini |   1   | 21 KB  | **1** | **1** | **1** | **1** |  243 ms _0_  | 168 ms _0_  |  _0_  |    **1**    |
+| Date       | Score |  Library  | Deps  |  Size  | Light | Input A | Input B | Throw | Safe  | Script exec  |  Lib exec   | Fast  | Readability |
+| ---------- | :---: | :-------: | :---: | :----: | :---: | :-----: | :-----: | :---: | :---: | :----------: | :---------: | :---: | :---------: |
+| 2025-04-13 |   2   |  arktype  |   2   | 147 KB |  _0_  |  **1**  |  **1**  |  _0_  | **1** | 875 ms _-1_  | 709 ms _-1_ |  _0_  |    **1**    |
+| 2025-04-13 |   8   |  valibot  | **0** |  5 KB  | **1** |  **1**  |  **1**  | **1** | **1** | 72 ms **1**  | 10 ms **1** | **1** |     _0_     |
+| 2025-04-13 |   4   | @zod/mini |   1   | 21 KB  | **1** |  **1**  |   _0_   | **1** | **1** |  218 ms _0_  | 131 ms _0_  |  _0_  |     _0_     |
+| 2025-04-13 |   8   |  zod v3   | **0** | 60 KB  |  _0_  |  **1**  |  **1**  | **1** | **1** | 102 ms **1** | 35 ms **1** | **1** |    **1**    |
+| 2025-04-13 |   5   |  zod v4   |   1   | 49 KB  |  _0_  |  **1**  |  **1**  | **1** | **1** |  225 ms _0_  | 144 ms _0_  |  _0_  |    **1**    |
 
 Legend :
 
 - Deps : the number of dependencies of the library
 - Size : the minified build size in bytes of the related file in `src`, run  `bun run build` to see by yourself
 - Light : 1 point if the build is `<= 20 KB`
-- Input : 1 point if the library can see that `age` is optional in the input but not optional in `type User` the output type
+- Input A : 1 point if the library can see that `age` is `optional, number` in the input but `not optional, number` in `type User` the output type
+- Input B : 1 point if the library can see that `phone` is `optional, string or number` in the input but `not optional, string` in `type User` the output type
 - Throw : 1 point if the library have a parse or throw method, useful when we don't want to handle the error cases
 - Safe : 1 point if the library have a safe parse method that will not throw and usually return a `Result` type
 - Script exec : 1 point if the average time in ms to execute the test file with bun is `<= 100ms`, check the `bun run bench` command output
@@ -69,7 +70,10 @@ Ok the build size is bigger but it does not impact the performance that much.
 
 The 35ms vs 11ms seems like a 3x difference but it's the time to run 1000 iterations. So in the end it's not that much of a difference in a real world scenario.
 
-For some weird reason zod4 seems to be slower than zod3
+## Remarks
+
+1. For some weird reason Zod v4 seems to be slower than Zod v3
+2. Zod mini not handling the `or` operator is a blocker to me, hopefully it will be added in the future
 
 ## Todo
 
@@ -100,7 +104,7 @@ Just open an issue or a PR, I'll be happy to discuss it with you <3
 - [Shields.io](https://shields.io) : for the nice badges on top of this readme
 - [Valibot](https://github.com/fabian-hiller/valibot) : for making this comparison possible
 - [Zod](https://github.com/colinhacks/zod) : for making this comparison possible
-  
+
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/Shuunen/validation-lib-comparison.svg?variant=adaptive)](https://starchart.cc/Shuunen/validation-lib-comparison)
