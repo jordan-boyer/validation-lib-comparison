@@ -20,6 +20,7 @@
   },
   "description": "Comparison of different TypeScript validation libraries",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@tsconfig/strictest": "^2.0",
     "@types/bun": "latest",
     "repo-check": "^1.42",
@@ -49,8 +50,8 @@
     "bench:node": "hyperfine --runs 10 'node dist/arktype.js' 'node dist/valibot.js' 'node dist/zod-mini.js' 'node dist/zod3.js' 'node dist/zod4.js'",
     "bench:node:strip": "hyperfine --runs 10 'node --experimental-strip-types src/arktype.ts' 'node --experimental-strip-types src/valibot.ts' 'node --experimental-strip-types src/zod-mini.ts' 'node --experimental-strip-types src/zod3.ts' 'node --experimental-strip-types src/zod4.ts'",
     "build": "bun scripts/build.ts && echo build success",
-    "check": "pnpm i && bun check:tsc && bun run build && bun check:once && echo check success",
-    "check:once": "bun src/arktype.ts && bun src/valibot.ts && bun src/zod-mini.ts && bun src/zod3.ts && bun src/zod4.ts && echo check:once success",
+    "check": "pnpm i && bun check:tsc && bun check:biome && bun run build && bun check:once && echo check success",
+    "check:biome": "biome check --error-on-warnings --write --unsafe src && echo check:biome success",
     "check:repo": "repo-check && echo check:repo success",
     "check:tsc": "tsc --noEmit && echo check:tsc success"
   },
