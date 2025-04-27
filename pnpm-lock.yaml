@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@zod/mini':
-        specifier: 4.0.0-beta.20250412T085909
-        version: 4.0.0-beta.20250412T085909
+        specifier: 4.0.0-beta.20250424T163858
+        version: 4.0.0-beta.20250424T163858
       arktype:
         specifier: ^2.1
-        version: 2.1.19
+        version: 2.1.20
       suretype:
         specifier: ^3.3
         version: 3.3.1
@@ -21,11 +21,11 @@ importers:
         specifier: latest
         version: 1.0.0(typescript@5.8.3)
       zod3:
-        specifier: npm:zod@^3.24.2
-        version: zod@3.24.2
+        specifier: npm:zod@^3.24.3
+        version: zod@3.24.3
       zod4:
-        specifier: npm:zod@4.0.0-beta.20250411T005215
-        version: zod@4.0.0-beta.20250411T005215
+        specifier: npm:zod@4.0.0-beta.20250424T163858
+        version: zod@4.0.0-beta.20250424T163858
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -35,7 +35,7 @@ importers:
         version: 2.0.5
       '@types/bun':
         specifier: latest
-        version: 1.2.9
+        version: 1.2.10
       repo-check:
         specifier: ^1.42
         version: 1.42.0
@@ -48,11 +48,11 @@ importers:
 
 packages:
 
-  '@ark/schema@0.45.9':
-    resolution: {integrity: sha512-rG0v/JI0sibn/0wERAHTYVLCtEqoMP2IIlxnb+S5DrEjCI5wpubbZSWMDW50tZ8tV6FANu6zzHDeeKbp6lsZdg==}
+  '@ark/schema@0.46.0':
+    resolution: {integrity: sha512-c2UQdKgP2eqqDArfBqQIJppxJHvNNXuQPeuSPlDML4rjw+f1cu0qAlzOG4b8ujgm9ctIDWwhpyw6gjG5ledIVQ==}
 
-  '@ark/util@0.45.9':
-    resolution: {integrity: sha512-0WYNAb8aRGp7dNt6xIvIrRzL7V1XL3u3PK2vcklhtTrdaP235DjC9qJhzidrxtWr68mA5ySSjUrgrXk622bKkw==}
+  '@ark/util@0.46.0':
+    resolution: {integrity: sha512-JPy/NGWn/lvf1WmGCPw2VGpBg5utZraE84I7wli18EDF3p3zc/e9WolT35tINeZO3l7C77SjqRJeAUoT0CvMRg==}
 
   '@babel/helper-validator-identifier@7.25.9':
     resolution: {integrity: sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==}
@@ -114,23 +114,17 @@ packages:
   '@tsconfig/strictest@2.0.5':
     resolution: {integrity: sha512-ec4tjL2Rr0pkZ5hww65c+EEPYwxOi4Ryv+0MtjeaSQRJyq322Q27eOQiFbuNgw2hpL4hB1/W/HBGk3VKS43osg==}
 
-  '@types/bun@1.2.9':
-    resolution: {integrity: sha512-epShhLGQYc4Bv/aceHbmBhOz1XgUnuTZgcxjxk+WXwNyDXavv5QHD1QEFV0FwbTSQtNq6g4ZcV6y0vZakTjswg==}
+  '@types/bun@1.2.10':
+    resolution: {integrity: sha512-eilv6WFM3M0c9ztJt7/g80BDusK98z/FrFwseZgT4bXCq2vPhXD4z8R3oddmAn+R/Nmz9vBn4kweJKmGTZj+lg==}
 
-  '@types/node@22.14.0':
-    resolution: {integrity: sha512-Kmpl+z84ILoG+3T/zQFyAJsU6EPTmOCj8/2+83fSN6djd6I4o7uOuGIH6vq3PrjY5BGitSbFuMN18j3iknubbA==}
+  '@types/node@22.15.2':
+    resolution: {integrity: sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A==}
 
-  '@types/ws@8.18.1':
-    resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
+  '@zod/core@0.9.0':
+    resolution: {integrity: sha512-bVfPiV2kDUkAJ4ArvV4MHcPZA8y3xOX6/SjzSy2kX2ACopbaaAP4wk6hd/byRmfi9MLNai+4SFJMmcATdOyclg==}
 
-  '@zod/core@0.3.3':
-    resolution: {integrity: sha512-zXp0/K9zynk8ZP5hdUN2i0xePJ6uULX5rvBC/54bWNF4FL9YHxTjQg/zPFNj+WE8g0QTKX+fty7n073bgp6wNw==}
-
-  '@zod/core@0.4.6':
-    resolution: {integrity: sha512-0IeEldTobOdkoJPyINVQgOHlgCWbpozSsDjdcd2+VcxKvf8T+SYLDVk7NKt0XJx3C0ImNXAXh3V3yIw46NJyQA==}
-
-  '@zod/mini@4.0.0-beta.20250412T085909':
-    resolution: {integrity: sha512-L4JpGahto3ZZot2QlCTlKnNwYjqqDUAd+cRiOocbDiBwosi+TyLlHFE63hIKS0FUDQPIqlEXMsL0VFThow7hkg==}
+  '@zod/mini@4.0.0-beta.20250424T163858':
+    resolution: {integrity: sha512-dUrw6GDXsFbbjvHBlqOrkWiFFNbo9EW+/D3NcoO+28rJdLM330tSMK16m3NrPhDbLbZU6VLEd0yL650w5Kqmkg==}
 
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -142,8 +136,8 @@ packages:
   arg@5.0.2:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
 
-  arktype@2.1.19:
-    resolution: {integrity: sha512-notORSuTSpfLV7rq0kYC4mTgIVlVR0xQuvtFxOaE9aKiXyON/kgoIBwZZcKeSSb4BebNcfJoGlxJicAUl/HMdw==}
+  arktype@2.1.20:
+    resolution: {integrity: sha512-IZCEEXaJ8g+Ijd59WtSYwtjnqXiwM8sWQ5EjGamcto7+HVN9eK0C4p0zDlCuAwWhpqr6fIBkxPuYDl4/Mcj/+Q==}
 
   awesome-ajv-errors@5.1.0:
     resolution: {integrity: sha512-kXak1TPsFI3hMFWc5ase0EQJEBgVSo/iLil4QZnogyEg6/rYxnywCvuF0doB9iKzqDUUOwzVTduq0Z16CxWICQ==}
@@ -155,8 +149,8 @@ packages:
     resolution: {integrity: sha512-FJH2rUCFpCMIm1YU1n5Oit59Sy9Okc+K5z77MbbKDcLoNuFbskq55qZO7ePoVuImoMEQ+G5FgLneUWUlJ89FEQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  bun-types@1.2.9:
-    resolution: {integrity: sha512-dk/kOEfQbajENN/D6FyiSgOKEuUi9PWfqKQJEgwKrCMWbjS/S6tEXp178mWvWAcUSYm9ArDlWHZKO3T/4cLXiw==}
+  bun-types@1.2.10:
+    resolution: {integrity: sha512-b5ITZMnVdf3m1gMvJHG+gIfeJHiQPJak0f7925Hxu6ZN5VKA8AGy4GZ4lM+Xkn6jtWxg5S3ldWvfmXdvnkp3GQ==}
 
   chalk@5.4.1:
     resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
@@ -284,19 +278,19 @@ packages:
       typescript:
         optional: true
 
-  zod@3.24.2:
-    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+  zod@3.24.3:
+    resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
 
-  zod@4.0.0-beta.20250411T005215:
-    resolution: {integrity: sha512-FgvuS7Gb0kzI9Rsd1ihOulGSFT9LVj0JdejbkvjXIski9F/DheDIBV9uZkbAIiS6bOsthAMWHFtSsM1o+hmhig==}
+  zod@4.0.0-beta.20250424T163858:
+    resolution: {integrity: sha512-fKhW+lEJnfUGo0fvQjmam39zUytARR2UdCEh7/OXJSBbKScIhD343K74nW+UUHu/r6dkzN6Uc/GqwogFjzpCXg==}
 
 snapshots:
 
-  '@ark/schema@0.45.9':
+  '@ark/schema@0.46.0':
     dependencies:
-      '@ark/util': 0.45.9
+      '@ark/util': 0.46.0
 
-  '@ark/util@0.45.9': {}
+  '@ark/util@0.46.0': {}
 
   '@babel/helper-validator-identifier@7.25.9': {}
 
@@ -337,25 +331,19 @@ snapshots:
 
   '@tsconfig/strictest@2.0.5': {}
 
-  '@types/bun@1.2.9':
+  '@types/bun@1.2.10':
     dependencies:
-      bun-types: 1.2.9
+      bun-types: 1.2.10
 
-  '@types/node@22.14.0':
+  '@types/node@22.15.2':
     dependencies:
       undici-types: 6.21.0
 
-  '@types/ws@8.18.1':
+  '@zod/core@0.9.0': {}
+
+  '@zod/mini@4.0.0-beta.20250424T163858':
     dependencies:
-      '@types/node': 22.14.0
-
-  '@zod/core@0.3.3': {}
-
-  '@zod/core@0.4.6': {}
-
-  '@zod/mini@4.0.0-beta.20250412T085909':
-    dependencies:
-      '@zod/core': 0.4.6
+      '@zod/core': 0.9.0
 
   ajv@6.12.6:
     dependencies:
@@ -370,10 +358,10 @@ snapshots:
 
   arg@5.0.2: {}
 
-  arktype@2.1.19:
+  arktype@2.1.20:
     dependencies:
-      '@ark/schema': 0.45.9
-      '@ark/util': 0.45.9
+      '@ark/schema': 0.46.0
+      '@ark/util': 0.46.0
 
   awesome-ajv-errors@5.1.0(ajv@6.12.6):
     dependencies:
@@ -392,10 +380,9 @@ snapshots:
       charcodes: 0.2.0
       js-tokens: 8.0.3
 
-  bun-types@1.2.9:
+  bun-types@1.2.10:
     dependencies:
-      '@types/node': 22.14.0
-      '@types/ws': 8.18.1
+      '@types/node': 22.15.2
 
   chalk@5.4.1: {}
 
@@ -498,8 +485,8 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
-  zod@3.24.2: {}
+  zod@3.24.3: {}
 
-  zod@4.0.0-beta.20250411T005215:
+  zod@4.0.0-beta.20250424T163858:
     dependencies:
-      '@zod/core': 0.3.3
+      '@zod/core': 0.9.0
