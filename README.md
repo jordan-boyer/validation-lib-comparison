@@ -30,25 +30,27 @@ At the time of writing, Node 22 is around 2 times slower than Bun v1 ^^'
 Here are the library used in this comparison :
 
 - [arktype](https://github.com/arktypeio/arktype) from David Blass
+- [suretype](https://github.com/grantila/suretype) from Gustaf Räntilä
 - [valibot](https://github.com/fabian-hiller/valibot) from Fabian Hiller
 - [zod](https://github.com/colinhacks/zod) from Colin McDonnell
 - [zod/mini](https://github.com/colinhacks/zod) from Colin McDonnell
 
-| Date       | Score |  Library  | Deps  |  Size  | Light | Input A | Input B | Throw | Safe  | Script exec  |  Lib exec   | Fast  | Readability |
-| ---------- | :---: | :-------: | :---: | :----: | :---: | :-----: | :-----: | :---: | :---: | :----------: | :---------: | :---: | :---------: |
-| 2025-04-13 |   2   |  arktype  |   2   | 147 KB |  _0_  |  **1**  |  **1**  |  _0_  | **1** | 875 ms _-1_  | 709 ms _-1_ |  _0_  |    **1**    |
-| 2025-04-13 |   8   |  valibot  | **0** |  5 KB  | **1** |  **1**  |  **1**  | **1** | **1** | 72 ms **1**  | 10 ms **1** | **1** |     _0_     |
-| 2025-04-13 |   4   | @zod/mini |   1   | 21 KB  | **1** |  **1**  |   _0_   | **1** | **1** |  218 ms _0_  | 131 ms _0_  |  _0_  |     _0_     |
-| 2025-04-13 |   8   |  zod v3   | **0** | 60 KB  |  _0_  |  **1**  |  **1**  | **1** | **1** | 102 ms **1** | 35 ms **1** | **1** |    **1**    |
-| 2025-04-13 |   5   |  zod v4   |   1   | 49 KB  |  _0_  |  **1**  |  **1**  | **1** | **1** |  225 ms _0_  | 144 ms _0_  |  _0_  |    **1**    |
+| Date       | Score |  Library  | Deps  |  Size  | Light | Input A | Input B | Throw | Safe  | Script exec  |   Lib exec   | Fast  | Readability |
+| ---------- | :---: | :-------: | :---: | :----: | :---: | :-----: | :-----: | :---: | :---: | :----------: | :----------: | :---: | :---------: |
+| 2025-04-27 |   2   |  ArkType  |   2   | 148 KB |  _0_  |  **1**  |  **1**  |  _0_  | **1** | 878 ms _-1_  | 715 ms _-1_  |  _0_  |    **1**    |
+| 2025-04-27 |   1   | Suretype  |   3   | 195 KB |  _0_  |   _0_   |   _0_   | **1** | **1** | 2477 ms _-1_ | 2312 ms _-1_ |  _0_  |    **1**    |
+| 2025-04-27 |   8   |  Valibot  | **0** |  6 KB  | **1** |  **1**  |  **1**  | **1** | **1** | 69 ms **1**  |  8 ms **1**  | **1** |     _0_     |
+| 2025-04-27 |   4   | @zod/mini |   1   | 22 KB  | **1** |  **1**  |   _0_   | **1** | **1** |  211 ms _0_  |  135 ms _0_  |  _0_  |     _0_     |
+| 2025-04-27 |   8   |  Zod v3   | **0** | 60 KB  |  _0_  |  **1**  |  **1**  | **1** | **1** | 100 ms **1** | 32 ms **1**  | **1** |    **1**    |
+| 2025-04-27 |   5   |  Zod v4   |   1   | 49 KB  |  _0_  |  **1**  |  **1**  | **1** | **1** |  224 ms _0_  |  146 ms _0_  |  _0_  |    **1**    |
 
 Legend :
 
 - Deps : the number of dependencies of the library
-- Size : the minified build size in bytes of the related file in `src`, run  `bun run build` to see by yourself
+- Size : the minified build size in kilobytes of the related `.ts` file in `src`, run  `bun run build` to see by yourself
 - Light : 1 point if the build is `<= 20 KB`
-- Input A : 1 point if the library can see that `age` is `optional, number` in the input but `not optional, number` in `type User` the output type
-- Input B : 1 point if the library can see that `phone` is `optional, string or number` in the input but `not optional, string` in `type User` the output type
+- Input A : 1 point if the library can see that `age` is `optional, number` in `type UserInput` but `not optional, number` in `type User` the output type
+- Input B : 1 point if the library can see that `phone` is `optional, string or number` in `type UserInput` but `not optional, string` in `type User` the output type
 - Throw : 1 point if the library have a parse or throw method, useful when we don't want to handle the error cases
 - Safe : 1 point if the library have a safe parse method that will not throw and usually return a `Result` type
 - Script exec : 1 point if the average time in ms to execute the test file with bun is `<= 100ms`, check the `bun run bench` command output
