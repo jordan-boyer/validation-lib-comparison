@@ -1,5 +1,8 @@
+import { heapStats } from 'bun:jsc'
 import { type input as InferInput, type infer as InferOutput, number, object, string } from 'zod4'
 import { checkUserA, checkUserB, checkUserC, logExecTime, nbIterations } from './utils.ts'
+
+Bun.write('./metrics/zod4.heap.before.json', JSON.stringify(heapStats()))
 
 const startTime = performance.now()
 
@@ -36,3 +39,7 @@ for (let i = 0; i < nbIterations; i++) {
 }
 
 logExecTime('Zod v4', startTime)
+
+Bun.gc(true)
+
+Bun.write('./metrics/zod4.heap.after.json', JSON.stringify(heapStats()))
