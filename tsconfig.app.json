@@ -1,7 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowJs": true,
+    "erasableSyntaxOnly": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "lib": [
@@ -11,6 +13,7 @@
     "module": "ESNext",
     "moduleDetection": "force",
     "moduleResolution": "bundler",
+    "noEmit": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": false,
@@ -21,18 +24,8 @@
     "verbatimModuleSyntax": true
   },
   "extends": "@tsconfig/strictest/tsconfig.json",
-  "references": [
-    {
-      "path": "./tsconfig.arktype.json"
-    },
-    {
-      "path": "./tsconfig.valibot.json"
-    },
-    {
-      "path": "./tsconfig.zod3.json"
-    },
-    {
-      "path": "./tsconfig.zod4.json"
-    }
+  "include": [
+    "scripts",
+    "src"
   ]
 }

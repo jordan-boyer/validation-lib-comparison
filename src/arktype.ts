@@ -1,5 +1,8 @@
+import { heapStats } from 'bun:jsc'
 import { type } from 'arktype'
 import { checkUserA, checkUserB, checkUserC, logExecTime, nbIterations } from './utils.ts'
+
+Bun.write('./metrics/arktype.heap.before.json', JSON.stringify(heapStats()))
 
 const startTime = performance.now()
 
@@ -36,3 +39,7 @@ for (let i = 0; i < nbIterations; i++) {
 }
 
 logExecTime('ArkType', startTime)
+
+Bun.gc(true)
+
+Bun.write('./metrics/arktype.heap.after.json', JSON.stringify(heapStats()))
